@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieMagnet</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="video.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div id="videoplayer">
+                <div class="backe"><a href="#"><span class="material-symbols-outlined bak">
+                            keyboard_backspace
+                        </span></a></div>
+                <div class="title">
+                    <h4
+                        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        Jhon</h4>
+                </div>
+                <div class="spinner">
+                    <div class="red"></div>
+                    <div class="blue"></div>
+                    <div class="green"></div>
+                </div>
+                <video src=" " id="main-video">
+                    <track kind="subtitles" srclang="en" label="English" src="captions/">
+                </video>
+                <p class="caption_text">Load</p>
+                <div class="thumbnail"></div>
+                <div class="progresstime">0:00</div>
+                <div class="controls">
+                    <div class="progress-area">
+                        <div class="progress-bar">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="controls-list">
+                        <div class="control-left">
+                            <span class="material-symbols-outlined rewind icon">
+                                replay_10
+                            </span>
+                            <span class="material-symbols-outlined play icon">
+                                play_circle
+                            </span>
+                            <span class="material-symbols-outlined forward icon">
+                                forward_10
+                            </span>
+                            <span class="icon">
+                                <i class="material-symbols-outlined vol">
+                                    volume_up
+                                </i>
+                                <input type="range" min="0" max="100" class="vol_ran">
+                            </span>
+                            <div class="timer">
+                                <span class="curent">0:00</span> / <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="control-right">
+                            <span id="range">
+                                <input type="range" min="20" max="100" value="0" class="seeker" />
+                            </span>
+                            </span>
+                            <span class="material-symbols-outlined setting icon">
+                                settings
+                            </span>
+                            <span class="material-symbols-outlined pip icon">
+                                picture_in_picture_alt
+                            </span>
+                            <span class="material-symbols-outlined full icon">
+                                fullscreen
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="setting">
+                    <div data-label="settinghome">
+                        <ul>
+                            <li data-label="speed">
+                                <span class="material-symbols-outlined icon">
+                                    slow_motion_video
+                                </span>
+                                <span>Playback speed</span>
+                                <span class="material-symbols-outlined icon">
+                                    arrow_forward_ios
+                                </span>
+                            </li>
+                            <li data-label="quality">
+                                <span class="material-symbols-outlined icon">
+                                    tune
+                                </span>
+                                <span>Quality</span>
+                                <span class="material-symbols-outlined icon">
+                                    arrow_forward_ios
+                                </span>
+                            </li>
+                            <li data-label="subtitle">
+                                <span class="material-symbols-outlined icon">
+                                    subtitles
+                                </span>
+                                <span>Subtitle</span>
+                                <span class="material-symbols-outlined icon">
+                                    arrow_forward_ios
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="playback" data-label="speed" hidden>
+                        <span>
+                            <i class="material-symbols-outlined icon back" data-label="settinghome">
+                                arrow_back
+                            </i>
+                            <span>Playback Speed</span>
+                        </span>
+                        <ul>
+                            <li data-speed="0.25">0.25x</li>
+                            <li data-speed="0.5">0.5x</li>
+                            <li data-speed="0.75">0.75x</li>
+                            <li data-speed="1" class="active">Normal</li>
+                            <li data-speed="1.25">1.25x</li>
+                            <li data-speed="1.5">1.5x</li>
+                            <li data-speed="1.75">1.75x</li>
+                            <li data-speed="2">2x</li>
+                        </ul>
+                    </div>
+                    <div class="quality quality-options" data-label="quality" hidden>
+                        <span>
+                            <i class="material-symbols-outlined icon back" data-label="settinghome">
+                                arrow_back
+                            </i>
+                            <span>Video Quality</span>
+                        </span>
+                        <ul>
+                            <li data-quality="4000">4K</li>
+                            <li data-quality="1080">1080p</li>
+                            <li data-quality="720">720p</li>
+                            <li data-quality="360">360p</li>
+                            <li data-quality="140">140p</li>
+                            <li data-quality="720" class="active">Auto</li>
+                        </ul>
+                    </div>
+                    <div class="subtitle" data-label="subtitle" hidden>
+                        <span>
+                            <i class="material-symbols-outlined icon back" data-label="settinghome">
+                                arrow_back
+                            </i>
+                            <span> Video Subtitle </span>
+                        </span>
+                        <ul>
+                            <li data-subtitle="off">OFF</li>
+                            <li data-subtitle="English">English</li>
+                            <li data-subtitle="Hindi">Hindi</li>
+                            <li data-subtitle="Tamil">Tamil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="video.js"></script>
+
+</body>
+
+</html>

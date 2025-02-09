@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+body {
+    background-color: rgb(5, 4, 4);
+}
+
+section {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* video player */
+.container #videoplayer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container #videoplayer .thumbnail {
+    position: absolute;
+    bottom: 97px;
+    left: calc(var(--x) + 25px);
+    transform: translateX(-50%);
+    width: 200px;
+    height: 140px;
+    background: #000;
+    border: 0.1px solid white;
+    display: none;
+    border-radius: 1px;
+}
+
+.container #videoplayer .title {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 400;
+    top: 2%;
+    color: #fff;
+    left: 10%;
+    text-transform: capitalize;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+}
+
+.container #videoplayer .backe {
+    position: absolute;
+    font-weight: 400;
+    top: 2%;
+    left: 12px;
+    z-index: 1;
+}
+
+.container #videoplayer .bak {
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.container #videoplayer .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ccc;
+    border-left-color: rgb(214, 103, 103);
+    border-right-color: rgb(153, 207, 225);
+    border-top-color: rgb(121, 214, 121);
+    border-radius: 50%;
+    z-index: 1;
+    animation: animate .5s linear infinite;
+    display: none;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container #videoplayer #main-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+    outline: none;
+}
+
+.caption_text {
+    position: absolute;
+    left: 50%;
+    width: 65%;
+    max-width: 90%;
+    color: #fff;
+    text-align: center;
+    user-select: none;
+    display: none;
+    transition: bottom 0.4s;
+    transform: translate(-50%, -50%);
+}
+
+.caption_text mark {
+    background-color: #0000008f !important;
+    color: #fff;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.caption_text.active {
+    bottom: 6%;
+    font-size: 20px;
+    display: block;
+}
+
+#videoplayer .progresstime {
+    position: absolute;
+    padding: 5px 10px;
+    bottom: 70px;
+    left: var(--x);
+    color: white;
+    font-size: 17px;
+    z-index: 1;
+    display: none;
+}
+
+
+.container #videoplayer .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(16, 15, 15, 0.71);
+    box-shadow: 0 0 40px 10px rgb(0 0 0 / 25%);
+    z-index: 3;
+    transform: translateY(0);
+    transition: .4s;
+}
+
+#videoplayer .controls .progress-area {
+    width: 97%;
+    height: 5px;
+    margin: auto;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.40);
+}
+
+.controls .progress-area .progress-bar {
+    position: relative;
+    width: 0%;
+    background: #f10505;
+    height: inherit;
+    border-radius: inherit;
+    cursor: pointer;
+}
+
+.controls .progress-area .progress-bar::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    background: #f10505;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.controls .controls-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    height: 46px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+
+.controls .controls-list .control-left,
+.controls .controls-list .control-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls .control-left .timer {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5px;
+    white-space: nowrap;
+    color: #fff;
+    text-align: center;
+}
+
+.controls .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.controls .icon .vol_ran {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    width: 0;
+    align-items: center;
+    background: linear-gradient(to right, #f10505 0%, #f10505 var(--value), rgba(255, 255, 255, 0.40) var(--value), rgba(255, 255, 255, 0.40) 100%);
+    color: #f10505;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .6s;
+}
+
+.controls .icon .vol_ran::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    background: #f10505;
+    color: #f10505;
+    transition: .3s;
+    opacity: 0;
+}
+
+.controls .icon:hover .vol_ran {
+    width: 80px;
+    display: flex;
+}
+
+.controls .icon:hover .vol_ran::-webkit-slider-thumb {
+    opacity: 1;
+    pointer-events: auto;
+    transition: .5s;
+}
+
+.control-left .rewind:active {
+    transition: .6s;
+    transform: rotate(-45deg);
+}
+
+.control-left .forward:active {
+    transition: .4s;
+    transform: rotate(45deg);
+}
+
+.control-right #range{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.control-right .seeker {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    width: 50px;
+}
+
+.seeker:focus {
+    outline: none;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.seeker::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #2d1c1c;
+    background: #6e6e6f;
+}
+.seeker::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    margin-top: -6px;
+    height: 15px;
+    width: 8px; 
+    cursor: pointer;
+    background: #a76c6c;
+    transition: .3s; 
+  }
+
+.control-right .setting {
+    transition: .4s;
+}
+
+.control-right .setting:active {
+    transition: .4s;
+    transform: rotate(120deg);
+}
+
+#videoplayer #setting {
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+    background-color: #0000008f;
+    width: 200px;
+    max-height: 180px;
+    height: auto;
+    color: #fff;
+    z-index: 20;
+    overflow-y: auto;
+    display: none;
+    border-radius: 7px;
+}
+
+#videoplayer #setting.active {
+    display: inline-block;
+}
+
+#videoplayer #setting>div>span {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    border-bottom: 1px solid rgb(148, 147, 147);
+}
+
+#videoplayer #setting>div .icon {
+    font-size: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#videoplayer #setting>div ul li span {
+    pointer-events: none;
+}
+
+#videoplayer #setting>div ul {
+    position: relative;
+}
+
+#videoplayer #setting>div ul li {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    padding: 15px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#videoplayer #setting>div ul li:hover {
+    background: rgba(28, 28, 28, 0.9);
+}
+
+#videoplayer #setting>div ul li.active::before {
+    content: '\e5ca';
+    font-size: 19px;
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 10px;
+}
+
+#videoplayer #setting::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(28, 28, 28, 0.9);
+}
+
+#videoplayer #setting::-webkit-scrollbar-thumb {
+    height: 20px;
+    background: rgba(79, 78, 78, 0.9);
+    border: 2px solid transparent;
+    border-radius: 20px;
+}

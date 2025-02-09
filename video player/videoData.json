@@ -1,0 +1,24 @@
+[
+    {
+        "title": "jhon wick (Trailer)",
+        "videoSources": {
+            "Auto": "video_auto.mp4",
+            "360p": "video_360.mp4",
+            "1080p": "video_1080.mp4"
+        },
+        "subtitle": [
+            "OFF",
+            "English",
+            "Spanish"
+        ],
+        "Tracks": {
+            "English": "test_en.vtt",
+            "Spanish": "test_sp.vtt"
+        },
+        "qualityOptions": [
+            "Auto",
+            "360p",
+            "1080p"
+        ]
+    }
+]
