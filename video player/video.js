@@ -422,7 +422,7 @@ video_player.addEventListener('mouseleave', () => {
 /// ///////////  Automatic  video and quality extractor ////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the video data from the JSON file
-    fetch("videoData.json")
+    fetch("video player/videoData.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -848,3 +848,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
