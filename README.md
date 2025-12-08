@@ -27,6 +27,9 @@ A simple and customizable video player built using HTML, CSS, and JavaScript.
 - Press the PiP button to watch in Picture-in-Picture mode.
 - Hover over the scrollbar to preview a thumbnail image.
 
+## Demo Link
+[https://akashdeep1305.github.io/Video-Player/]
+
 ## Technologies Used
 
 - HTML
