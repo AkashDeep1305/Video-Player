@@ -2,7 +2,7 @@
     {
         "title": "nature",
         "videoSources": {
-            "Auto": "video player/auto.mp4",
+            "Auto": "video player/Auto.mp4",
             "720p": "video player/720.mp4",
             "1080p": "video_1080.mp4"
         },
@@ -21,3 +21,4 @@
     }
 
 ]
+
