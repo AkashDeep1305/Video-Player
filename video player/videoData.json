@@ -1,24 +1,23 @@
 [
     {
-        "title": "jhon wick (Trailer)",
+        "title": "nature",
         "videoSources": {
-            "Auto": "video_auto.mp4",
-            "360p": "video_360.mp4",
+            "Auto": "video player/auto.mp4",
+            "720p": "video player/720.mp4",
             "1080p": "video_1080.mp4"
         },
         "subtitle": [
             "OFF",
-            "English",
-            "Spanish"
+            "English"
         ],
         "Tracks": {
-            "English": "test_en.vtt",
-            "Spanish": "test_sp.vtt"
+            "English": "test_en.vtt"
         },
         "qualityOptions": [
             "Auto",
-            "360p",
+            "720p",
             "1080p"
         ]
     }
+
 ]
